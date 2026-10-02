@@ -1,8 +1,26 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
 import { ExternalLink, Info } from "lucide-react";
 import { ExpandableCardStandard } from "@/components/ui/expandable-card-standard";
 import ContributionSkyline from "@/components/ui/contribution-skyline";
+
+// Aceternity UI Decorative Corner Plus Icon
+const CornerIcon = ({ className = "" }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className={`absolute h-5 w-5 text-emerald-500/30 pointer-events-none transition-colors group-hover/canvas-card:text-emerald-400/60 ${className}`}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+    </svg>
+  );
+};
 
 const GithubIcon = ({ className = "w-3.5 h-3.5" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -163,6 +181,7 @@ const TOP_FIVE_PRS = [
 
 export default function OpenSource() {
   const [showSkylineInfo, setShowSkylineInfo] = useState(false);
+  const [skylineHovered, setSkylineHovered] = useState(false);
 
   // Clear any legacy broken cache from previous localStorage attempts
   useEffect(() => {
@@ -187,67 +206,103 @@ export default function OpenSource() {
         </p>
       </div>
 
-      {/* 3D GitHub Contribution Skyline Heatmap (Semi-transparent Glassmorphism) */}
-      <div className="mb-12 rounded-2xl md:rounded-3xl border border-neutral-800/50 bg-neutral-900/30 p-4 sm:p-6 backdrop-blur-md shadow-xl relative overflow-hidden">
-        {/* Header label inside card */}
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-4 border-b border-neutral-800/40 pb-3">
-          <div className="flex items-center gap-2">
-            <GithubIcon className="w-3.5 h-3.5 text-neutral-400" />
-            <span className="text-xs font-medium text-neutral-200">
-              Contribution Skyline
-            </span>
-            <span className="text-neutral-600">·</span>
-            <span className="text-xs font-mono text-neutral-400">
-              @Ryanakml
-            </span>
-          </div>
-          {/* Interactive Info Tooltip */}
-          <div className="relative">
-            <button
-              type="button"
-              onClick={() => setShowSkylineInfo((prev) => !prev)}
-              onMouseEnter={() => setShowSkylineInfo(true)}
-              onMouseLeave={() => setShowSkylineInfo(false)}
-              className="w-5 h-5 rounded-full border border-neutral-700/80 bg-neutral-800/80 hover:bg-neutral-700 hover:border-emerald-500/50 text-neutral-400 hover:text-emerald-400 flex items-center justify-center transition-all cursor-pointer focus:outline-none focus:ring-1 focus:ring-emerald-400"
-              aria-label="Interactive guide"
-              title="Interactive guide"
-            >
-              <Info size={11} />
-            </button>
+      {/* 3D GitHub Contribution Skyline Heatmap (Technical Skills Card BG & Matrix Hover) */}
+      <div
+        onMouseEnter={() => setSkylineHovered(true)}
+        onMouseLeave={() => setSkylineHovered(false)}
+        className="mb-12 border border-neutral-800/80 group/canvas-card p-4 sm:p-6 relative rounded-2xl md:rounded-3xl bg-[#0f0f0f] hover:border-emerald-500/40 transition-all duration-300"
+      >
+        {/* 1:1 Aceternity Corner Cross Icons */}
+        <CornerIcon className="-top-2.5 -left-2.5" />
+        <CornerIcon className="-bottom-2.5 -left-2.5" />
+        <CornerIcon className="-top-2.5 -right-2.5" />
+        <CornerIcon className="-bottom-2.5 -right-2.5" />
 
-            {/* Tooltip on hover or click */}
-            <div
-              className={`absolute right-0 top-full mt-2 w-56 sm:w-60 p-2.5 rounded-xl border border-neutral-800 bg-neutral-950/95 backdrop-blur-md shadow-2xl z-30 transition-all duration-200 text-left ${
-                showSkylineInfo
-                  ? "opacity-100 translate-y-0 pointer-events-auto"
-                  : "opacity-0 -translate-y-1 pointer-events-none"
-              }`}
+        {/* 1:1 Aceternity CanvasRevealEffect via AnimatePresence */}
+        <AnimatePresence>
+          {skylineHovered && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="h-full w-full absolute inset-0 pointer-events-none rounded-2xl md:rounded-3xl overflow-hidden"
             >
-              <div className="text-[11px] font-mono text-emerald-400 font-semibold mb-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                Interactive Controls
+              <CanvasRevealEffect
+                animationSpeed={2.5}
+                containerClassName="bg-neutral-950/75 rounded-2xl md:rounded-3xl overflow-hidden"
+                colors={[
+                  [16, 185, 129],
+                  [52, 211, 153],
+                ]}
+                dotSize={2}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Card Content (Relative z-10 so it floats on top of canvas) */}
+        <div className="relative z-10">
+          {/* Header label inside card */}
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4 border-b border-neutral-800/40 pb-3">
+            <div className="flex items-center gap-2">
+              <GithubIcon className="w-3.5 h-3.5 text-neutral-400" />
+              <span className="text-xs font-medium text-neutral-200">
+                Contribution Skyline
+              </span>
+              <span className="text-neutral-600">·</span>
+              <span className="text-xs font-mono text-neutral-400">
+                @Ryanakml
+              </span>
+            </div>
+            {/* Interactive Info Tooltip */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setShowSkylineInfo((prev) => !prev)}
+                onMouseEnter={() => setShowSkylineInfo(true)}
+                onMouseLeave={() => setShowSkylineInfo(false)}
+                className="w-5 h-5 rounded-full border border-neutral-700/80 bg-neutral-800/80 hover:bg-neutral-700 hover:border-emerald-500/50 text-neutral-400 hover:text-emerald-400 flex items-center justify-center transition-all cursor-pointer focus:outline-none focus:ring-1 focus:ring-emerald-400"
+                aria-label="Interactive guide"
+                title="Interactive guide"
+              >
+                <Info size={11} />
+              </button>
+
+              {/* Tooltip on hover or click */}
+              <div
+                className={`absolute right-0 top-full mt-2 w-56 sm:w-60 p-2.5 rounded-xl border border-neutral-800 bg-neutral-950/95 backdrop-blur-md shadow-2xl z-30 transition-all duration-200 text-left ${
+                  showSkylineInfo
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-1 pointer-events-none"
+                }`}
+              >
+                <div className="text-[11px] font-mono text-emerald-400 font-semibold mb-1 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  Interactive Controls
+                </div>
+                <ul className="text-[11px] font-mono text-neutral-400 space-y-1">
+                  <li className="flex items-center gap-1.5">
+                    <span className="text-neutral-500">•</span> Drag to orbit 3D view
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span className="text-neutral-500">•</span> Double-click to reset angle
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span className="text-neutral-500">•</span> Click cells to inspect stats
+                  </li>
+                </ul>
               </div>
-              <ul className="text-[11px] font-mono text-neutral-400 space-y-1">
-                <li className="flex items-center gap-1.5">
-                  <span className="text-neutral-500">•</span> Drag to orbit 3D view
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span className="text-neutral-500">•</span> Double-click to reset angle
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span className="text-neutral-500">•</span> Click cells to inspect stats
-                </li>
-              </ul>
             </div>
           </div>
-        </div>
 
-        <ContributionSkyline
-          palette="github"
-          defaultView="3d"
-          unit="contribution"
-          className="text-white"
-        />
+          <ContributionSkyline
+            palette="github"
+            defaultView="3d"
+            unit="contribution"
+            className="text-white"
+          />
+        </div>
       </div>
 
       {/* 1:1 Official Aceternity ExpandableCard List (Top 5 Curated) */}
