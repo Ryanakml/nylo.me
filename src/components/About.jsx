@@ -47,7 +47,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="py-16 sm:py-24 w-full">
+    <section id="about" className="py-24 px-4 sm:px-6 max-w-5xl mx-auto">
       <div className="mb-8 text-left">
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2 font-mono">
           ABOUT ME

@@ -175,7 +175,7 @@ export default function OpenSource() {
   }, []);
 
   return (
-    <section id="oss" className="py-16 sm:py-20 w-full max-w-4xl mx-auto">
+    <section id="oss" className="py-20 px-4 sm:px-6 max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-10 text-left">
         <h2 className="text-3xl font-extrabold tracking-tight text-white font-mono mb-2">
@@ -188,7 +188,7 @@ export default function OpenSource() {
       </div>
 
       {/* 3D GitHub Contribution Skyline Heatmap (Semi-transparent Glassmorphism) */}
-      <div className="mb-12 rounded-2xl md:rounded-3xl border border-neutral-800/50 bg-neutral-900/30 p-3.5 sm:p-6 backdrop-blur-md shadow-xl relative overflow-hidden">
+      <div className="mb-12 rounded-2xl md:rounded-3xl border border-neutral-800/50 bg-neutral-900/30 p-4 sm:p-6 backdrop-blur-md shadow-xl relative overflow-hidden">
         {/* Header label inside card */}
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4 border-b border-neutral-800/40 pb-3">
           <div className="flex items-center gap-2">

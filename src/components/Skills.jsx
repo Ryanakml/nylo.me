@@ -280,7 +280,7 @@ function SkillCategoryCard({ section, className = "" }) {
         setHovered(false);
         setActiveTooltip(null);
       }}
-      className={`border border-neutral-800/80 group/canvas-card p-4 sm:p-6 relative rounded-2xl bg-[#0f0f0f] hover:border-emerald-500/40 transition-all duration-300 ${className} ${
+      className={`border border-neutral-800/80 group/canvas-card p-5 sm:p-6 relative rounded-2xl bg-[#0f0f0f] hover:border-emerald-500/40 transition-all duration-300 ${className} ${
         activeTooltip ? "z-40" : hovered ? "z-20" : "z-10"
       }`}
     >
@@ -378,7 +378,7 @@ function SkillCategoryCard({ section, className = "" }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-16 sm:py-20 w-full max-w-5xl mx-auto">
+    <section id="skills" className="py-20 px-4 sm:px-6 max-w-5xl mx-auto">
       {/* Header */}
       <div className="mb-8 text-left">
         <h2 className="text-3xl font-extrabold tracking-tight text-white mb-2 font-mono">

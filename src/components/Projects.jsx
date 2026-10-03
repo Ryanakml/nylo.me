@@ -136,7 +136,7 @@ function DeadboltFeatured3DCard({ project }) {
 
   return (
     <CardContainer className="inter-var w-full flex justify-center py-4">
-      <CardBody className="bg-[#0f0f0f] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.15] border-neutral-800 hover:border-emerald-500/40 w-full max-w-4xl h-auto rounded-2xl p-4 sm:p-7 md:p-8 border flex flex-col justify-between transition-colors duration-300">
+      <CardBody className="bg-[#0f0f0f] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.15] border-neutral-800 hover:border-emerald-500/40 w-full sm:w-[32rem] md:w-[38rem] h-auto rounded-2xl p-6 sm:p-8 border flex flex-col justify-between transition-colors duration-300">
         {/* Subtle ambient glow behind */}
         <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-emerald-500/10 blur-[100px] group-hover/card:bg-emerald-500/20 transition-colors duration-500" />
 
@@ -343,7 +343,7 @@ export default function Projects() {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <section id="projects" className="py-16 sm:py-20 w-full max-w-5xl mx-auto">
+    <section id="projects" className="py-20 px-4 sm:px-6 max-w-5xl mx-auto">
       <div className="mb-10 text-left">
         <h2 className="text-3xl font-extrabold tracking-tight text-white mb-2 font-mono">
           FEATURED PROJECTS & SYSTEMS

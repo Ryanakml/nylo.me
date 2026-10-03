@@ -11,9 +11,9 @@ export default function Hero() {
   const { totalCount: ossCount } = useGithubPRs();
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-center items-center px-3.5 sm:px-6 md:px-8 pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden w-full max-w-full">
+    <section className="relative min-h-[92vh] flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 pt-28 pb-16 overflow-hidden">
       {/* Background Radial Glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[650px] h-[300px] sm:h-[400px] max-w-full bg-emerald-500/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[400px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* Balanced Hero Container */}
       <div className="w-full max-w-5xl xl:max-w-[1040px] flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
@@ -100,9 +100,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-2"
+            className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2"
           >
-            <div className="p-3 sm:p-3.5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/40 hover:scale-[1.02] transition-all duration-200 group">
+            <div className="p-3.5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/40 hover:scale-[1.02] transition-all duration-200 group">
               <div className="text-emerald-400 mb-1 group-hover:scale-110 transition-transform">
                 <Layers size={18} />
               </div>
@@ -112,7 +112,7 @@ export default function Hero() {
               <div className="text-xs text-neutral-400">Shipped Systems</div>
             </div>
 
-            <div className="p-3 sm:p-3.5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/40 hover:scale-[1.02] transition-all duration-200 group">
+            <div className="p-3.5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/40 hover:scale-[1.02] transition-all duration-200 group">
               <div className="text-emerald-400 mb-1 group-hover:scale-110 transition-transform">
                 <GitPullRequest size={18} />
               </div>
@@ -122,7 +122,7 @@ export default function Hero() {
               <div className="text-xs text-neutral-400">External PRs Merged</div>
             </div>
 
-            <div className="p-3 sm:p-3.5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/40 hover:scale-[1.02] transition-all duration-200 group">
+            <div className="p-3.5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/40 hover:scale-[1.02] transition-all duration-200 group">
               <div className="text-emerald-400 mb-1 group-hover:scale-110 transition-transform">
                 <Code2 size={18} />
               </div>
@@ -130,7 +130,7 @@ export default function Hero() {
               <div className="text-xs text-neutral-400">Core Languages</div>
             </div>
 
-            <div className="p-3 sm:p-3.5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/40 hover:scale-[1.02] transition-all duration-200 group">
+            <div className="p-3.5 rounded-2xl bg-neutral-900/60 border border-neutral-800/80 hover:border-emerald-500/40 hover:scale-[1.02] transition-all duration-200 group">
               <div className="text-emerald-400 mb-1 group-hover:scale-110 transition-transform">
                 <Cpu size={18} />
               </div>
@@ -147,7 +147,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="w-full lg:w-[42%] flex justify-center"
         >
-          <CometCard className="w-full max-w-xs sm:max-w-sm">
+          <CometCard className="w-72 sm:w-80">
             <div className="relative w-full h-[380px] sm:h-[420px] rounded-2xl p-2.5 bg-gradient-to-b from-neutral-800/90 to-neutral-900/95 border border-neutral-700/60 shadow-2xl flex flex-col justify-between group overflow-hidden">
               {/* Inner Frame */}
               <div className="relative w-full h-full rounded-xl overflow-hidden bg-black/60 border border-neutral-800">
