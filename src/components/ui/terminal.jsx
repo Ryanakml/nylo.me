@@ -138,9 +138,9 @@ I am an AI Systems Engineer focused on building software that operates reliably 
   return (
     <div className="relative rounded-2xl md:rounded-3xl bg-black/35 backdrop-blur-[2px] border border-neutral-800 shadow-2xl overflow-hidden hover:border-neutral-700/80 transition-all duration-300">
       {/* Top Window Bar (Solid macOS Window Chrome Header) */}
-      <div className="flex flex-wrap items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3 bg-[#111113] border-b border-neutral-800 gap-2.5">
+      <div className="flex items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3 bg-[#111113] border-b border-neutral-800 gap-2 overflow-hidden w-full">
         {/* Left: Traffic Lights & Tab Pills */}
-        <div className="flex items-center gap-3 sm:gap-4 overflow-x-auto no-scrollbar max-w-full">
+        <div className="flex items-center gap-2.5 sm:gap-4 overflow-x-auto no-scrollbar min-w-0 flex-1 py-0.5">
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-rose-500/90 border border-rose-600/40" />
             <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-amber-500/90 border border-amber-600/40" />
@@ -148,11 +148,11 @@ I am an AI Systems Engineer focused on building software that operates reliably 
           </div>
 
           {/* Tab Selector */}
-          <div className="flex items-center bg-neutral-950 p-1 rounded-xl border border-neutral-800 text-xs sm:text-sm font-mono shrink-0">
+          <div className="flex items-center bg-neutral-950 p-0.5 sm:p-1 rounded-xl border border-neutral-800 text-[11px] sm:text-xs font-mono shrink-0">
             <button
               type="button"
               onClick={() => setActiveTab("profile")}
-              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1 shrink-0 ${
                 activeTab === "profile"
                   ? "bg-neutral-800 text-emerald-400 font-semibold shadow-sm border border-neutral-700/60"
                   : "text-neutral-400 hover:text-white"
@@ -163,7 +163,7 @@ I am an AI Systems Engineer focused on building software that operates reliably 
             <button
               type="button"
               onClick={() => setActiveTab("philosophy")}
-              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1 shrink-0 ${
                 activeTab === "philosophy"
                   ? "bg-neutral-800 text-emerald-400 font-semibold shadow-sm border border-neutral-700/60"
                   : "text-neutral-400 hover:text-white"
@@ -177,13 +177,13 @@ I am an AI Systems Engineer focused on building software that operates reliably 
                 setActiveTab("interactive");
                 setTimeout(() => inputRef.current?.focus(), 100);
               }}
-              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
+              className={`px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1 shrink-0 ${
                 activeTab === "interactive"
                   ? "bg-neutral-800 text-emerald-400 font-semibold shadow-sm border border-neutral-700/60"
                   : "text-neutral-400 hover:text-white"
               }`}
             >
-              <TerminalIcon size={13} />
+              <TerminalIcon size={12} />
               <span>interactive.zsh</span>
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-0.5" />
             </button>

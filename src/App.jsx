@@ -56,9 +56,9 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-emerald-500 selection:text-black antialiased relative">
+      <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#0a0a0a] text-white selection:bg-emerald-500 selection:text-black antialiased relative">
         {/* Aceternity Stars Background & Emerald Shooting Stars */}
-        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden w-full max-w-full">
           <StarsBackground
             starDensity={0.00025}
             allStarsTwinkle={true}
@@ -79,7 +79,7 @@ export default function App() {
         </div>
 
         {/* Page Content Layer above Stars */}
-        <div className="relative z-10">
+        <div className="relative z-10 w-full max-w-full overflow-x-hidden">
           {/* Floating Capsule Navbar */}
           <Navbar />
 
