@@ -128,10 +128,10 @@ export function TracingBeam({ children, className = "" }) {
   return (
     <motion.div
       ref={containerRef}
-      className={cn("relative w-full max-w-4xl mx-auto h-full px-4 sm:px-6", className)}
+      className={cn("relative w-full max-w-6xl mx-auto h-full px-3.5 sm:px-6 md:px-8", className)}
     >
-      {/* Side Tracing Beam Container */}
-      <div className="absolute -left-3 sm:-left-6 md:-left-12 lg:-left-16 top-3 pointer-events-none z-20">
+      {/* Side Tracing Beam Container (Visible on tablet & desktop, hidden on mobile for clean full-width layout) */}
+      <div className="hidden md:block absolute md:-left-8 lg:-left-12 top-3 pointer-events-none z-20">
         {/* Subtle Top Beacon Anchor */}
         <div className="ml-[27px] h-3.5 w-3.5 rounded-full border border-neutral-800 bg-neutral-950 shadow-sm flex items-center justify-center">
           <div className="h-1.5 w-1.5 rounded-full bg-emerald-500/80" />

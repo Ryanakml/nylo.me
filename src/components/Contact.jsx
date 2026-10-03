@@ -76,7 +76,7 @@ export default function Contact() {
       className="relative w-full min-h-[max(70vh,32rem)] flex flex-col justify-start pt-16 pb-0 overflow-hidden"
     >
       {/* 1:1 Left-Aligned Header */}
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 z-20 mb-2">
+      <div className="w-full max-w-4xl mx-auto z-20 mb-2">
         <h2 className="text-3xl font-extrabold tracking-tight text-white font-mono text-left">
           CONTACT
         </h2>

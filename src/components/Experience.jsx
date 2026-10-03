@@ -37,7 +37,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 max-w-4xl mx-auto">
+    <section id="experience" className="py-16 sm:py-20 w-full max-w-4xl mx-auto">
       {/* Header 1:1 matching reference */}
       <div className="mb-10 text-left">
         <h2 className="text-3xl font-extrabold tracking-tight text-white font-mono mb-2">
@@ -49,7 +49,7 @@ export default function Experience() {
       </div>
 
       {/* Timeline Section with 1:1 curved dotted line and glowing cards */}
-      <div className="relative pl-7 sm:pl-9">
+      <div className="relative pl-5 sm:pl-9">
         {/* Continuous Left Vertical Dashed/Dotted Line */}
         <div className="absolute left-0 top-[16px] bottom-[16px] w-0 border-l border-dashed border-neutral-700/80 pointer-events-none" />
 
@@ -86,7 +86,7 @@ export default function Experience() {
           {experiences.map((exp, idx) => (
             <div key={idx} className="relative">
               {/* Timeline Emerald Dot with pulse animation (1:1 with reference) */}
-              <div className="absolute -left-7 sm:-left-9 top-7 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
+              <div className="absolute -left-5 sm:-left-9 top-7 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none">
                 <div className="w-5 h-5 rounded-full bg-[#0a0a0a] border border-neutral-800/80 flex items-center justify-center shadow-sm">
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)] animate-pulse" />
                 </div>
@@ -104,7 +104,7 @@ export default function Experience() {
                   inactiveZone={0.01}
                   variant="emerald"
                 />
-                <div className="relative z-10 rounded-[inherit] bg-[#0c0c0c] p-6 sm:p-7">
+                <div className="relative z-10 rounded-[inherit] bg-[#0c0c0c] p-4 sm:p-7">
                   {/* Header Row: Role & Period */}
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
                     <h3 className="text-emerald-400 font-mono text-base sm:text-lg font-semibold tracking-tight">

@@ -102,7 +102,7 @@ export const CardSpotlight = ({
       />
 
       {/* Card Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full p-5 sm:p-6">
+      <div className="relative z-10 flex flex-col justify-between h-full p-4 sm:p-6">
         {children}
       </div>
     </div>

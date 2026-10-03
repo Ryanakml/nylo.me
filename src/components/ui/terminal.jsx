@@ -138,21 +138,21 @@ I am an AI Systems Engineer focused on building software that operates reliably 
   return (
     <div className="relative rounded-2xl md:rounded-3xl bg-black/35 backdrop-blur-[2px] border border-neutral-800 shadow-2xl overflow-hidden hover:border-neutral-700/80 transition-all duration-300">
       {/* Top Window Bar (Solid macOS Window Chrome Header) */}
-      <div className="flex flex-wrap items-center justify-between px-5 py-3 sm:px-6 bg-[#111113] border-b border-neutral-800 gap-3">
+      <div className="flex flex-wrap items-center justify-between px-3.5 sm:px-6 py-2.5 sm:py-3 bg-[#111113] border-b border-neutral-800 gap-2.5">
         {/* Left: Traffic Lights & Tab Pills */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <span className="w-3.5 h-3.5 rounded-full bg-rose-500/90 border border-rose-600/40" />
-            <span className="w-3.5 h-3.5 rounded-full bg-amber-500/90 border border-amber-600/40" />
-            <span className="w-3.5 h-3.5 rounded-full bg-emerald-500/90 border border-emerald-600/40" />
+        <div className="flex items-center gap-3 sm:gap-4 overflow-x-auto no-scrollbar max-w-full">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-rose-500/90 border border-rose-600/40" />
+            <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-amber-500/90 border border-amber-600/40" />
+            <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-emerald-500/90 border border-emerald-600/40" />
           </div>
 
           {/* Tab Selector */}
-          <div className="flex items-center bg-neutral-950 p-1 rounded-xl border border-neutral-800 text-xs sm:text-sm font-mono">
+          <div className="flex items-center bg-neutral-950 p-1 rounded-xl border border-neutral-800 text-xs sm:text-sm font-mono shrink-0">
             <button
               type="button"
               onClick={() => setActiveTab("profile")}
-              className={`px-3.5 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
+              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
                 activeTab === "profile"
                   ? "bg-neutral-800 text-emerald-400 font-semibold shadow-sm border border-neutral-700/60"
                   : "text-neutral-400 hover:text-white"
@@ -163,7 +163,7 @@ I am an AI Systems Engineer focused on building software that operates reliably 
             <button
               type="button"
               onClick={() => setActiveTab("philosophy")}
-              className={`px-3.5 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
+              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
                 activeTab === "philosophy"
                   ? "bg-neutral-800 text-emerald-400 font-semibold shadow-sm border border-neutral-700/60"
                   : "text-neutral-400 hover:text-white"
@@ -177,7 +177,7 @@ I am an AI Systems Engineer focused on building software that operates reliably 
                 setActiveTab("interactive");
                 setTimeout(() => inputRef.current?.focus(), 100);
               }}
-              className={`px-3.5 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
+              className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
                 activeTab === "interactive"
                   ? "bg-neutral-800 text-emerald-400 font-semibold shadow-sm border border-neutral-700/60"
                   : "text-neutral-400 hover:text-white"
@@ -191,7 +191,7 @@ I am an AI Systems Engineer focused on building software that operates reliably 
         </div>
 
         {/* Right: Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-auto">
           <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono text-neutral-400 bg-neutral-950 px-3 py-1.5 rounded-lg border border-neutral-800">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             zsh · darwin
@@ -221,7 +221,7 @@ I am an AI Systems Engineer focused on building software that operates reliably 
       {/* Terminal Viewport (Subtle Dark Smoked Glass Tint) */}
       <div
         ref={terminalScrollRef}
-        className="p-6 sm:p-8 md:p-10 font-mono text-neutral-300 min-h-[480px] md:min-h-[540px] overflow-y-auto space-y-6 bg-transparent"
+        className="p-4 sm:p-7 md:p-9 font-mono text-neutral-300 min-h-[440px] md:min-h-[540px] overflow-y-auto space-y-5 sm:space-y-6 bg-transparent"
       >
         {/* TAB 1: Fastfetch System Profile */}
         {activeTab === "profile" && (
@@ -241,9 +241,9 @@ I am an AI Systems Engineer focused on building software that operates reliably 
             </div>
 
             {/* Fastfetch Output Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-2 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 pt-2 items-start">
               {/* Left Column: ASCII Art Badge */}
-              <div className="md:col-span-4 p-5 rounded-2xl bg-black/20 border border-neutral-800/70 text-emerald-400 text-xs sm:text-[13px] font-mono leading-relaxed whitespace-pre select-none shadow-inner">
+              <div className="md:col-span-4 p-4 sm:p-5 rounded-2xl bg-black/20 border border-neutral-800/70 text-emerald-400 text-xs sm:text-[13px] font-mono leading-relaxed whitespace-pre select-none shadow-inner overflow-x-auto">
 {`   ____ _  __ ____
   / __ \\ |/ // __/
  / /_/ /   // /__ 

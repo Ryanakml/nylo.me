@@ -41,7 +41,7 @@ export const TextReveal = ({ lines, children, className }) => {
         data-text-reveal="true"
       >
         <div
-          className="sticky top-0 mx-auto flex h-screen min-h-[100svh] max-w-5xl items-center justify-center bg-transparent px-4 sm:px-6 md:px-8 py-8 sm:py-16"
+          className="sticky top-0 mx-auto flex h-screen min-h-[100svh] max-w-5xl items-center justify-center bg-transparent px-1 sm:px-4 md:px-6 py-8 sm:py-16"
           data-text-reveal-content="true"
         >
           <div className="w-full text-left font-mono font-bold text-[clamp(1.2rem,5vw,4.5rem)] tracking-tight leading-[1.25] sm:leading-[1.2] select-none overflow-x-hidden">

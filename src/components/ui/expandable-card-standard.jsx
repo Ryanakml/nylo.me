@@ -134,28 +134,28 @@ export function ExpandableCardStandard({ cards }) {
               layoutId={`card-${cardKey}-${id}`}
               key={`card-${cardKey}-${id}`}
               onClick={() => setActive(card)}
-              className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-900/80 bg-neutral-900/40 border border-neutral-800/80 hover:border-emerald-500/40 rounded-2xl cursor-pointer transition-colors duration-200"
+              className="p-3 sm:p-4 flex flex-row justify-between items-center gap-3 hover:bg-neutral-900/80 bg-neutral-900/40 border border-neutral-800/80 hover:border-emerald-500/40 rounded-2xl cursor-pointer transition-colors duration-200"
             >
-              <div className="flex gap-4 flex-col md:flex-row items-center w-full md:w-auto">
-                <motion.div layoutId={`image-${cardKey}-${id}`}>
+              <div className="flex gap-3 sm:gap-4 flex-row items-center min-w-0 flex-1">
+                <motion.div layoutId={`image-${cardKey}-${id}`} className="shrink-0">
                   <img
                     width={100}
                     height={100}
                     src={card.src}
                     alt={card.title}
-                    className="h-32 w-full md:h-14 md:w-14 rounded-xl object-cover object-top shrink-0"
+                    className="h-12 w-12 sm:h-14 sm:w-14 rounded-xl object-cover object-top shrink-0"
                   />
                 </motion.div>
-                <div className="flex-1 text-center md:text-left">
+                <div className="flex-1 text-left min-w-0">
                   <motion.h3
                     layoutId={`title-${cardKey}-${id}`}
-                    className="font-medium text-neutral-800 dark:text-neutral-200 text-base"
+                    className="font-medium text-neutral-800 dark:text-neutral-200 text-sm sm:text-base truncate"
                   >
                     {card.title}
                   </motion.h3>
                   <motion.p
                     layoutId={`description-${cardKey}-${id}`}
-                    className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm mt-0.5"
+                    className="text-neutral-600 dark:text-neutral-400 text-xs sm:text-sm mt-0.5 line-clamp-1 sm:line-clamp-2"
                   >
                     {card.description}
                   </motion.p>
@@ -163,7 +163,7 @@ export function ExpandableCardStandard({ cards }) {
               </div>
               <motion.button
                 layoutId={`button-${cardKey}-${id}`}
-                className="px-4 py-1.5 text-xs sm:text-sm rounded-full font-semibold bg-neutral-800 hover:bg-emerald-500 hover:text-black text-neutral-200 mt-4 md:mt-0 shrink-0 transition-colors"
+                className="px-3 sm:px-4 py-1.5 text-xs sm:text-sm rounded-full font-semibold bg-neutral-800 hover:bg-emerald-500 hover:text-black text-neutral-200 shrink-0 transition-colors"
               >
                 {card.ctaText}
               </motion.button>
