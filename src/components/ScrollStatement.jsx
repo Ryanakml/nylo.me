@@ -3,7 +3,7 @@ import { TextReveal } from "@/components/ui/text-reveal";
 
 // 1:1 Stepped Staircase / Trend-Up Icon matching reference image
 export function LearnStairsIcon({
-  className = "w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 text-emerald-400 inline-block align-middle",
+  className = "w-[1.05em] h-[1.05em] text-emerald-400 inline-block align-middle shrink-0",
 }) {
   return (
     <svg
@@ -23,7 +23,7 @@ export function LearnStairsIcon({
 
 // 1:1 Lorc / Game-Icons Shatter Broken Glass Icon matching reference image
 export function BreakShatterIcon({
-  className = "w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 text-emerald-400 inline-block align-middle",
+  className = "w-[1.05em] h-[1.05em] text-emerald-400 inline-block align-middle shrink-0",
 }) {
   return (
     <svg
