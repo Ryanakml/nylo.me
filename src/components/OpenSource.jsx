@@ -15,7 +15,7 @@ const GithubIcon = ({ className = "w-3.5 h-3.5" }) => (
 );
 
 const GITHUB_SEARCH_URL =
-  "https://github.com/search?type=pullrequests&q=author%3ARyanakml+is%3Apr+is%3Amerged+-user%3ARyanakml";
+  "https://github.com/search?type=pullrequests&q=author%3ARyanakml+is%3Apr+-user%3ARyanakml";
 
 // Curated Top 5 Upstream Contributions (python, numpy, huggingface,
 // matplotlib, django — best of Ryanakml, links verified via gh)
@@ -24,7 +24,7 @@ const TOP_FIVE_PRS = [
     id: "pr-typeshed-16450",
     title: "Python (Typeshed)",
     description: "Python Core Typing • Pull Request #16450",
-    src: "/images/oss-merge.svg",
+    src: "/images/oss/python.svg",
     ctaText: "View PR",
     ctaLink: "https://github.com/python/typeshed/pull/16450",
     content: () => (
@@ -43,7 +43,7 @@ const TOP_FIVE_PRS = [
           <code className="text-emerald-400">python/typeshed</code>
           <br />
           <span>Status: </span>
-          <span className="text-emerald-400 font-bold">Merged Upstream into Main</span>
+          <span className="text-neutral-200 font-bold">Upstream Contributor</span>
         </div>
       </div>
     ),
@@ -52,7 +52,7 @@ const TOP_FIVE_PRS = [
     id: "pr-numpy-32911",
     title: "NumPy",
     description: "Numerical Core • Pull Request #32911",
-    src: "/images/oss-merge.svg",
+    src: "/images/oss/numpy.svg",
     ctaText: "View PR",
     ctaLink: "https://github.com/numpy/numpy/pull/32911",
     content: () => (
@@ -71,7 +71,7 @@ const TOP_FIVE_PRS = [
           <code className="text-emerald-400">numpy/numpy</code>
           <br />
           <span>Status: </span>
-          <span className="text-amber-400 font-bold">Open — Under Review</span>
+          <span className="text-neutral-200 font-bold">Upstream Contributor</span>
         </div>
       </div>
     ),
@@ -80,7 +80,7 @@ const TOP_FIVE_PRS = [
     id: "pr-accelerate-4357",
     title: "Hugging Face (Accelerate)",
     description: "ML Distributed Training • Pull Request #4357",
-    src: "/images/oss-merge.svg",
+    src: "/images/oss/huggingface.svg",
     ctaText: "View PR",
     ctaLink: "https://github.com/huggingface/accelerate/pull/4357",
     content: () => (
@@ -99,7 +99,7 @@ const TOP_FIVE_PRS = [
           <code className="text-emerald-400">huggingface/accelerate</code>
           <br />
           <span>Status: </span>
-          <span className="text-amber-400 font-bold">Open — Under Review</span>
+          <span className="text-neutral-200 font-bold">Upstream Contributor</span>
         </div>
       </div>
     ),
@@ -108,7 +108,7 @@ const TOP_FIVE_PRS = [
     id: "pr-matplotlib-32421",
     title: "Matplotlib",
     description: "Data Visualization Core • Pull Request #32421",
-    src: "/images/oss-merge.svg",
+    src: "/images/oss/matplotlib.svg",
     ctaText: "View PR",
     ctaLink: "https://github.com/matplotlib/matplotlib/pull/32421",
     content: () => (
@@ -127,7 +127,7 @@ const TOP_FIVE_PRS = [
           <code className="text-emerald-400">matplotlib/matplotlib</code>
           <br />
           <span>Status: </span>
-          <span className="text-emerald-400 font-bold">Merged Upstream into Main</span>
+          <span className="text-neutral-200 font-bold">Upstream Contributor</span>
         </div>
       </div>
     ),
@@ -136,7 +136,7 @@ const TOP_FIVE_PRS = [
     id: "pr-django-22093",
     title: "Django",
     description: "Web Framework Core • Pull Request #22093",
-    src: "/images/oss-merge.svg",
+    src: "/images/oss/django.svg",
     ctaText: "View PR",
     ctaLink: "https://github.com/django/django/pull/22093",
     content: () => (
@@ -155,7 +155,7 @@ const TOP_FIVE_PRS = [
           <code className="text-emerald-400">django/django</code>
           <br />
           <span>Status: </span>
-          <span className="text-amber-400 font-bold">Open — Under Review</span>
+          <span className="text-neutral-200 font-bold">Upstream Contributor</span>
         </div>
       </div>
     ),
@@ -262,7 +262,7 @@ export default function OpenSource() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono border border-neutral-800 bg-[#0f0f0f] text-neutral-400 hover:text-white hover:border-emerald-500/40 hover:bg-neutral-900 transition-colors"
         >
-          <span>View all merged pull requests on GitHub</span>
+          <span>View all pull requests on GitHub</span>
           <ExternalLink size={13} />
         </a>
       </div>

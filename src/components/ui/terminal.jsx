@@ -91,7 +91,7 @@ I am an AI Systems Engineer focused on building software that operates reliably 
       case "oss":
         newHistory.push({
           type: "output",
-          text: "Upstream Contributions:\n• Python/Typeshed (PR #16450, merged) - Python Core Typing\n• NumPy (PR #32911, open) - Numerical Core\n• HF Accelerate (PR #4357, open) - ML Distributed Training\n• Matplotlib (PR #32421, merged) - Data Visualization Core\n• Django (PR #22093, open) - Web Framework Core",
+          text: "Upstream Contributions:\n• Python/Typeshed (PR #16450) - Python Core Typing\n• NumPy (PR #32911) - Numerical Core\n• HF Accelerate (PR #4357) - ML Distributed Training\n• Matplotlib (PR #32421) - Data Visualization Core\n• Django (PR #22093) - Web Framework Core",
         });
         break;
       case "uptime":

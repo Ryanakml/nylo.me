@@ -186,8 +186,7 @@ export const projects = [
 ];
 
 // Fallback if GitHub API rate-limits — live fetch replaces this automatically.
-// Curated best-5 (links verified via gh). state: merged = upstream merged,
-// open = under review.
+// Curated best-5 (links verified via gh).
 export const ossFallback = [
   {
     repo: "python/typeshed",
@@ -195,7 +194,6 @@ export const ossFallback = [
     title: "Add note that csv.Dialect is usually the wrong class",
     url: "https://github.com/python/typeshed/pull/16450",
     category: "Python Core Typing",
-    state: "merged",
   },
   {
     repo: "numpy/numpy",
@@ -203,7 +201,6 @@ export const ossFallback = [
     title: "DOC: Clarify half-to-even rounding behavior for quantile 'nearest' method",
     url: "https://github.com/numpy/numpy/pull/32911",
     category: "Numerical Core",
-    state: "open",
   },
   {
     repo: "huggingface/accelerate",
@@ -211,7 +208,6 @@ export const ossFallback = [
     title: "Fix gather_tensor_shape discarding zero-sized dimensions and crash in copy_tensor_to_devices",
     url: "https://github.com/huggingface/accelerate/pull/4357",
     category: "ML Distributed Training",
-    state: "open",
   },
   {
     repo: "matplotlib/matplotlib",
@@ -219,7 +215,6 @@ export const ossFallback = [
     title: "DOC: synchronize Axes.margins docs with set_xmargin/set_ymargin",
     url: "https://github.com/matplotlib/matplotlib/pull/32421",
     category: "Data Visualization Core",
-    state: "merged",
   },
   {
     repo: "django/django",
@@ -227,7 +222,6 @@ export const ossFallback = [
     title: "Fixed #37397 -- Clarified DATA_UPLOAD_MAX_MEMORY_SIZE behavior on request.body vs request.POST.",
     url: "https://github.com/django/django/pull/22093",
     category: "Web Framework Core",
-    state: "open",
   },
 ];
 

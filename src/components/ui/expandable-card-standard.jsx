@@ -73,11 +73,11 @@ export function ExpandableCardStandard({ cards }) {
             >
               <motion.div layoutId={`image-${active.id || active.ctaLink || active.title}-${id}`}>
                 <img
-                  width={200}
+                  width={400}
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-72 sm:h-80 object-cover object-top"
+                  className="w-full h-44 sm:h-52 object-contain bg-neutral-950 p-8"
                 />
               </motion.div>
 
@@ -134,16 +134,16 @@ export function ExpandableCardStandard({ cards }) {
               layoutId={`card-${cardKey}-${id}`}
               key={`card-${cardKey}-${id}`}
               onClick={() => setActive(card)}
-              className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-900/80 bg-neutral-900/40 border border-neutral-800/80 hover:border-emerald-500/40 rounded-2xl cursor-pointer transition-colors duration-200"
+              className="group p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-900 hover:border-emerald-500/50 hover:shadow-[0_0_36px_-12px_rgba(16,185,129,0.5)] bg-neutral-900/40 border border-neutral-800/80 rounded-2xl cursor-pointer transition-all duration-200"
             >
               <div className="flex gap-4 flex-col md:flex-row items-center w-full md:w-auto">
-                <motion.div layoutId={`image-${cardKey}-${id}`}>
+                <motion.div layoutId={`image-${cardKey}-${id}`} className="shrink-0">
                   <img
-                    width={100}
-                    height={100}
+                    width={56}
+                    height={56}
                     src={card.src}
                     alt={card.title}
-                    className="h-32 w-full md:h-14 md:w-14 rounded-xl object-cover object-top shrink-0"
+                    className="h-14 w-14 rounded-xl object-contain bg-neutral-800/80 p-2"
                   />
                 </motion.div>
                 <div className="flex-1 text-center md:text-left">
@@ -163,9 +163,9 @@ export function ExpandableCardStandard({ cards }) {
               </div>
               <motion.button
                 layoutId={`button-${cardKey}-${id}`}
-                className="px-4 py-1.5 text-xs sm:text-sm rounded-full font-semibold bg-neutral-800 hover:bg-emerald-500 hover:text-black text-neutral-200 mt-4 md:mt-0 shrink-0 transition-colors"
+                className="px-4 py-1.5 text-xs sm:text-sm rounded-full font-semibold bg-neutral-800 text-neutral-200 mt-4 md:mt-0 shrink-0 transition-all duration-200 group-hover:bg-emerald-500 group-hover:text-black group-hover:shadow-[0_0_20px_-4px_rgba(16,185,129,0.7)]"
               >
-                {card.ctaText}
+                {card.ctaText} <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">↗</span>
               </motion.button>
             </motion.div>
           );
