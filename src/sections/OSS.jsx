@@ -131,7 +131,7 @@ This list updates itself from GitHub, no redeploy needed.`;
                   {pr.repo}#{pr.number}
                 </span>
                 <span className="text-xs md:text-sm uppercase tracking-widest opacity-60">
-                  merged ↗
+                  {pr.state === "open" ? "open ↗" : "merged ↗"}
                 </span>
               </div>
               <span className="text-sm md:text-base opacity-70">{pr.title}</span>

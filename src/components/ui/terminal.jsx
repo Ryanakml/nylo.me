@@ -91,7 +91,7 @@ I am an AI Systems Engineer focused on building software that operates reliably 
       case "oss":
         newHistory.push({
           type: "output",
-          text: "Merged Upstream Contributions:\n• OpenHands (PR #12223) - Autonomous AI Software Engineer (46k ⭐)\n• Celery (PR #10739) - Distributed Task Queue (25k ⭐)\n• Matplotlib (PR #32421) - Data Visualization Core (21k ⭐)\n• Pylint (PR #11487) - Static Code Analysis (10k ⭐)\n• Typeshed (PR #16450) - Python Core Typing (4.5k ⭐)",
+          text: "Upstream Contributions:\n• Python/Typeshed (PR #16450, merged) - Python Core Typing\n• NumPy (PR #32911, open) - Numerical Core\n• HF Accelerate (PR #4357, open) - ML Distributed Training\n• Matplotlib (PR #32421, merged) - Data Visualization Core\n• Django (PR #22093, open) - Web Framework Core",
         });
         break;
       case "uptime":

@@ -17,29 +17,30 @@ const GithubIcon = ({ className = "w-3.5 h-3.5" }) => (
 const GITHUB_SEARCH_URL =
   "https://github.com/search?type=pullrequests&q=author%3ARyanakml+is%3Apr+is%3Amerged+-user%3ARyanakml";
 
-// Curated Top 5 Prestigious Upstream Contributions (Zero API delay, zero missing content)
+// Curated Top 5 Upstream Contributions (python, numpy, huggingface,
+// matplotlib, django — best of Ryanakml, links verified via gh)
 const TOP_FIVE_PRS = [
   {
-    id: "pr-12223",
-    title: "OpenHands",
-    description: "Autonomous AI Software Engineer • Pull Request #12223",
-    src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+    id: "pr-typeshed-16450",
+    title: "Python (Typeshed)",
+    description: "Python Core Typing • Pull Request #16450",
+    src: "/images/oss-merge.svg",
     ctaText: "View PR",
-    ctaLink: "https://github.com/OpenHands/OpenHands/pull/12223",
+    ctaLink: "https://github.com/python/typeshed/pull/16450",
     content: () => (
       <div className="space-y-3 font-mono text-xs sm:text-sm">
         <div className="text-neutral-200 font-semibold text-sm">
-          Feat: Chat message skeleton loader and conversation panel stabilization
+          Types: Add note that csv.Dialect is usually the wrong class
         </div>
         <p>
-          <strong>Issue:</strong> Layout shifts and UI flickering during real-time multi-agent LLM streaming responses in conversation panels.
+          <strong>Contribution:</strong> Updated Python standard library type annotations in Typeshed (used by mypy, pyright, and the VS Code Python extension).
         </p>
         <p>
-          <strong>Upstream Fix:</strong> Engineered dedicated chat message skeleton loaders and stabilized routing state for OpenHands, eliminating layout shifts and reinforcing frontend reliability during high-frequency token generation.
+          <strong>Detail:</strong> Documented that <code>csv.Dialect</code> is rarely the right annotation, steering thousands of libraries away from downstream runtime type errors.
         </p>
         <div className="pt-2 text-neutral-400">
           <span>Repository: </span>
-          <code className="text-emerald-400">OpenHands/OpenHands</code>
+          <code className="text-emerald-400">python/typeshed</code>
           <br />
           <span>Status: </span>
           <span className="text-emerald-400 font-bold">Merged Upstream into Main</span>
@@ -48,50 +49,78 @@ const TOP_FIVE_PRS = [
     ),
   },
   {
-    id: "pr-10739",
-    title: "Celery",
-    description: "Distributed Task Queue • Pull Request #10739",
-    src: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop",
+    id: "pr-numpy-32911",
+    title: "NumPy",
+    description: "Numerical Core • Pull Request #32911",
+    src: "/images/oss-merge.svg",
     ctaText: "View PR",
-    ctaLink: "https://github.com/celery/celery/pull/10739",
+    ctaLink: "https://github.com/numpy/numpy/pull/32911",
     content: () => (
       <div className="space-y-3 font-mono text-xs sm:text-sm">
         <div className="text-neutral-200 font-semibold text-sm">
-          Fix: Expand tilde paths in worker --workdir CLI argument
+          DOC: Clarify half-to-even rounding behavior for quantile &apos;nearest&apos; method
         </div>
         <p>
-          <strong>Issue:</strong> In Celery multi-worker daemon environments, directory paths containing tilde (<code>~</code>) were not being expanded in the <code>--workdir</code> argument, causing worker spawn failures on POSIX servers.
+          <strong>Issue:</strong> Ambiguous docs around which rounding rule <code>quantile</code> applies with <code>method=&apos;nearest&apos;</code>, risking silent off-by-one statistics in scientific code.
         </p>
         <p>
-          <strong>Upstream Fix:</strong> Implemented proper tilde expansion across process spawning utilities and added regression test coverage ensuring path resolution stability across Linux & macOS worker daemons.
+          <strong>Upstream Fix:</strong> Spelled out the half-to-even rounding behavior explicitly so downstream users get predictable, correct quantiles.
         </p>
         <div className="pt-2 text-neutral-400">
           <span>Repository: </span>
-          <code className="text-emerald-400">celery/celery</code>
+          <code className="text-emerald-400">numpy/numpy</code>
           <br />
           <span>Status: </span>
-          <span className="text-emerald-400 font-bold">Merged Upstream into Core</span>
+          <span className="text-amber-400 font-bold">Open — Under Review</span>
         </div>
       </div>
     ),
   },
   {
-    id: "pr-32421",
+    id: "pr-accelerate-4357",
+    title: "Hugging Face (Accelerate)",
+    description: "ML Distributed Training • Pull Request #4357",
+    src: "/images/oss-merge.svg",
+    ctaText: "View PR",
+    ctaLink: "https://github.com/huggingface/accelerate/pull/4357",
+    content: () => (
+      <div className="space-y-3 font-mono text-xs sm:text-sm">
+        <div className="text-neutral-200 font-semibold text-sm">
+          Fix gather_tensor_shape discarding zero-sized dimensions and crash in copy_tensor_to_devices
+        </div>
+        <p>
+          <strong>Issue:</strong> Distributed shape gathering silently dropped zero-sized dimensions and crashed device copies, breaking multi-GPU training setups on edge-case tensor shapes.
+        </p>
+        <p>
+          <strong>Upstream Fix:</strong> Preserved zero-sized dimensions through gathering and hardened device-copy paths against the crash.
+        </p>
+        <div className="pt-2 text-neutral-400">
+          <span>Repository: </span>
+          <code className="text-emerald-400">huggingface/accelerate</code>
+          <br />
+          <span>Status: </span>
+          <span className="text-amber-400 font-bold">Open — Under Review</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: "pr-matplotlib-32421",
     title: "Matplotlib",
     description: "Data Visualization Core • Pull Request #32421",
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+    src: "/images/oss-merge.svg",
     ctaText: "View PR",
     ctaLink: "https://github.com/matplotlib/matplotlib/pull/32421",
     content: () => (
       <div className="space-y-3 font-mono text-xs sm:text-sm">
         <div className="text-neutral-200 font-semibold text-sm">
-          Doc: Clarify Axes.margins behavior and numeric limit formulas
+          DOC: Synchronize Axes.margins docs with set_xmargin/set_ymargin
         </div>
         <p>
           <strong>Issue:</strong> Discrepancy between documentation of <code>Axes.margins()</code> and <code>set_xmargin</code>/<code>set_ymargin</code> behavior in edge-case axis autoscaling.
         </p>
         <p>
-          <strong>Upstream Fix:</strong> Synchronized documentation across all axes margin methods, added mathematical margin formula and clear numeric examples explaining limit calculations for scientific plotting.
+          <strong>Upstream Fix:</strong> Synchronized documentation across all axes margin methods with clear numeric examples explaining limit calculations for scientific plotting.
         </p>
         <div className="pt-2 text-neutral-400">
           <span>Repository: </span>
@@ -104,57 +133,29 @@ const TOP_FIVE_PRS = [
     ),
   },
   {
-    id: "pr-11487",
-    title: "Pylint",
-    description: "Static Code Analysis • Pull Request #11487",
-    src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1000&auto=format&fit=crop",
+    id: "pr-django-22093",
+    title: "Django",
+    description: "Web Framework Core • Pull Request #22093",
+    src: "/images/oss-merge.svg",
     ctaText: "View PR",
-    ctaLink: "https://github.com/pylint-dev/pylint/pull/11487",
+    ctaLink: "https://github.com/django/django/pull/22093",
     content: () => (
       <div className="space-y-3 font-mono text-xs sm:text-sm">
         <div className="text-neutral-200 font-semibold text-sm">
-          Fix: False positive unsubscriptable-object on generic type indexing
+          Fixed #37397 — Clarified DATA_UPLOAD_MAX_MEMORY_SIZE on request.body vs request.POST
         </div>
         <p>
-          <strong>Issue:</strong> False positive <code>unsubscriptable-object</code> lint error triggered when indexing generic types using <code>__class_getitem__</code>.
+          <strong>Issue:</strong> Unclear docs on whether <code>DATA_UPLOAD_MAX_MEMORY_SIZE</code> guards <code>request.body</code>, <code>request.POST</code>, or both — a security-relevant setting every Django deploy relies on.
         </p>
         <p>
-          <strong>Upstream Fix:</strong> Added rigorous AST-based regression test suites in Pylint's test harness, validating type subscripting across Python 3.9+ type systems and preventing erroneous build pipeline warnings.
+          <strong>Upstream Fix:</strong> Documented the exact behavior per accessor so developers configure upload limits correctly.
         </p>
         <div className="pt-2 text-neutral-400">
           <span>Repository: </span>
-          <code className="text-emerald-400">pylint-dev/pylint</code>
+          <code className="text-emerald-400">django/django</code>
           <br />
           <span>Status: </span>
-          <span className="text-emerald-400 font-bold">Merged Upstream into Main</span>
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: "pr-16450",
-    title: "Typeshed",
-    description: "Python Core Typing • Pull Request #16450",
-    src: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1000&auto=format&fit=crop",
-    ctaText: "View PR",
-    ctaLink: "https://github.com/python/typeshed/pull/16450",
-    content: () => (
-      <div className="space-y-3 font-mono text-xs sm:text-sm">
-        <div className="text-neutral-200 font-semibold text-sm">
-          Types: Update csv.Dialect stubs and typing guards
-        </div>
-        <p>
-          <strong>Contribution:</strong> Updated Python standard library type annotations in Typeshed (used by mypy, pyright, and VS Code Python extension).
-        </p>
-        <p>
-          <strong>Detail:</strong> Added documentation and type guards clarifying usage of <code>csv.Dialect</code> to eliminate downstream runtime type errors across thousands of Python libraries.
-        </p>
-        <div className="pt-2 text-neutral-400">
-          <span>Repository: </span>
-          <code className="text-emerald-400">python/typeshed</code>
-          <br />
-          <span>Status: </span>
-          <span className="text-emerald-400 font-bold">Merged Upstream into Main</span>
+          <span className="text-amber-400 font-bold">Open — Under Review</span>
         </div>
       </div>
     ),
@@ -183,7 +184,7 @@ export default function OpenSource() {
         </h2>
 
         <p className="text-sm sm:text-base text-neutral-400 max-w-2xl leading-relaxed">
-          Direct upstream code contributions to major open source runtimes, distributed task queues, static analyzers, and autonomous AI agents.
+          Direct upstream code contributions to the Python typing core, numerical computing, ML training infra, visualization, and web framework ecosystems.
         </p>
       </div>
 
